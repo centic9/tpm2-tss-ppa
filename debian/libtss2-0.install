@@ -1,0 +1,3 @@
+usr/lib/*/libtctisocket.so.*
+usr/lib/*/libtctidevice.so.*
+usr/lib/*/libtss2.so.*

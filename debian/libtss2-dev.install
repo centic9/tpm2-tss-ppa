@@ -1,0 +1,5 @@
+usr/lib/*/libtss2.so
+usr/lib/*/libtctisocket.so
+usr/lib/*/libtctidevice.so
+usr/include/tss2
+usr/include/tcti

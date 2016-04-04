@@ -1,0 +1,16 @@
+tpm2-tss (0.98+20160226.d4f23cc-0ubuntu2) xenial; urgency=medium
+
+  * debian/libtss2-utils.tpm2-resourcemgr.service: ship a systemd unit to be
+    able to use TPM 2.0 tools as soon as libtss2-utils is installed.
+    (LP: #1566027)
+  * debian/libtss2-utils.tpm2-resourcemgr.default: ship a simple defaults file
+    to customize start options for the systemd unit.
+  * debian/rules, debian/control: enable dh-system for the new init script.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Mon, 04 Apr 2016 17:14:13 -0400
+
+tpm2-tss (0.98+20160226.d4f23cc-0ubuntu1) xenial; urgency=medium
+
+  * Initial release. (LP: #1561834)
+
+ -- Mathieu Trudel-Lapierre <mathieu-tl@ubuntu.com>  Thu, 24 Mar 2016 16:25:53 -0400

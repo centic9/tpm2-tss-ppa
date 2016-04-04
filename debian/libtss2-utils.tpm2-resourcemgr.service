@@ -1,0 +1,10 @@
+[Unit]
+Description=TPM resource manager daemon
+
+[Service]
+EnvironmentFile=-/etc/default/tpm2-resourcemgr
+ExecStart=/usr/sbin/resourcemgr $resourcemgr_opts
+StandardOutput=syslog
+
+[Install]
+WantedBy=multi-user.target
