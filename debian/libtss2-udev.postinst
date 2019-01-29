@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+# creating tss group if he isn't already there
+if ! getent group tss >/dev/null; then
+        addgroup --system tss
+fi
+
+# creating tss user if he isn't already there
+if ! getent passwd tss >/dev/null; then
+        adduser --system --ingroup tss --shell /bin/false \
+                --home /var/lib/tpm --no-create-home \
+                --gecos "TPM2 software stack" \
+                tss
+fi
+
+#DEBHELPER#

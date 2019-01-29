@@ -11,7 +11,10 @@ Copyright: 2015, Trusted Computing Group (TCG)
 License: TCG
 
 Files: debian/*
-Copyright: 2016, Canonical Ltd. <mathieu.trudel-lapierre@canonical.com>
+Copyright: 2016 Canonical Ltd.
+	   2016 Mathieu Trudel-Lapierre <mathieu.trudel-lapierre@canonical.com>
+	   2017 Ivan Hu <ivan.hu@ubuntu.com>
+	   2017 Ying-Chun Liu (PaulLiU) <paulliu@debian.org>
 License: GPL-3
 
 License: TCG
@@ -91,4 +94,3 @@ License: BSD-2-clause
  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
  THE POSSIBILITY OF SUCH DAMAGE.
-

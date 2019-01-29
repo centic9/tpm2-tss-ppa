@@ -1,5 +1,4 @@
-usr/lib/*/libtss2.so
-usr/lib/*/libtctisocket.so
-usr/lib/*/libtctidevice.so
-usr/include/tss2
-usr/include/tcti
+usr/include/*
+usr/lib/*/lib*.so
+usr/lib/*/pkgconfig
+usr/share/man/man7

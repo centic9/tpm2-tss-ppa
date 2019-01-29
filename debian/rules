@@ -1,10 +1,16 @@
 #!/usr/bin/make -f
 
+DB2MAN = /usr/share/sgml/docbook/stylesheet/xsl/docbook-xsl/manpages/docbook.xsl
+XP     = xsltproc -''-nonet -''-param man.charmap.use.subset "0"
+
 %:
-	dh $@ --with autoreconf,systemd
+	dh $@ --with autoreconf
 
 override_dh_autoreconf:
 	dh_autoreconf ./bootstrap
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-unit
 
 override_dh_autoreconf_clean:
 	rm -f compile depcomp ltmain.sh config.sub missing config.guess \
@@ -12,9 +18,18 @@ override_dh_autoreconf_clean:
 		m4/ltsugar.m4 m4/lt\~obsolete.m4
 	dh_autoreconf_clean
 
+override_dh_auto_build: resourcemgr.1 tpmclient.1 tpmtest.1
+	dh_auto_build
+
 override_dh_install:
 	find debian/tmp \( -name '*.la' -o -name '*.a' \) -delete
 	dh_install --list-missing
 
-override_dh_installinit:
-	dh_installinit -plibtss2-utils --name=tpm2-resourcemgr
+resourcemgr.1: debian/resourcemgr.xml
+	$(XP) $(DB2MAN) $<
+
+tpmclient.1: debian/tpmclient.xml
+	$(XP) $(DB2MAN) $<
+
+tpmtest.1: debian/tpmtest.xml
+	$(XP) $(DB2MAN) $<

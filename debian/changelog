@@ -1,3 +1,92 @@
+tpm2-tss (2.1.0-4) unstable; urgency=low
+
+  * Change tss user home directory to /var/lib/tpm.
+    - Tries to comply with trousers mentioned in #918979
+  * Add empty var/lib/tpm directory (Closes: #918972)
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Wed, 30 Jan 2019 07:22:12 +0800
+
+tpm2-tss (2.1.0-3) unstable; urgency=medium
+
+  * libtss2-dev: fix missing Depends: libgcrypt20-dev (Closes: #918749)
+  * Bump Standards-Version to 4.3.0: nothing needs to be changed.
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Thu, 10 Jan 2019 08:57:06 +0800
+
+tpm2-tss (2.1.0-2) unstable; urgency=low
+
+  * Add 0001-test-fix-tpm2b-unit-tests-failing-on-big-endian.patch
+    - From upstream commit eeb5a2fddce43d00eb5d8aa7c61b099bdf87a9f4
+    - Fixes unit test failed (Closes: #910858)
+    - Thanks to Tadeusz Struk <tadeusz.struk@intel.com> who fixes the bug
+    - Thanks to Philipp Kern <pkern@debian.org> who helps forward and test
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Sat, 27 Oct 2018 01:56:37 +0800
+
+tpm2-tss (2.1.0-1) unstable; urgency=low
+
+  * New upstream release
+    - Rename the package from libsapi* to libtss2* for the upstream
+      changes the soname and library name
+    - Remove lib*-utils package. No utils anymore on 2.x.x
+    - Add libtss2-udev for installing udev rules
+  * debian/control: Remove broken Vcs-Git and Vcs-Homepage
+  * Remove debian/patches: All patches are in the upstream already.
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Fri, 05 Oct 2018 04:17:21 +0800
+
+tpm2-tss (1.4.0-2) unstable; urgency=low
+
+  * Fix FTBFS on big-endian architectures. (Closes: #896144)
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Sat, 21 Apr 2018 23:40:12 +0800
+
+tpm2-tss (1.4.0-1) unstable; urgency=low
+
+  * New upstream release
+    - Remove 0001_build_Add_libsapi_to_LDADD_for_sapi_util_unit_tests.patch:
+      upstream accepts the patch already.
+    - Add 0001_bootstrap_not_using_git.patch: Don't use git in  bootstrap
+      script.
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Wed, 18 Apr 2018 19:23:38 +0800
+
+tpm2-tss (1.3.0-1) unstable; urgency=low
+
+  [ Ying-Chun Liu (PaulLiu) ]
+  * New upstream release
+  * debian/rule: Enable unit tests
+    - debian/control: Add cmocka to build dependency
+  * debian/control: Fix Vcs-Git and Vcs-Browser URL
+  * Bump debhelper version to 10. Removing build depends on dh-systemd
+  * Add 0001_build_Add_libsapi_to_LDADD_for_sapi_util_unit_tests.patch
+    - Fix unit test fail.
+  * debian/control: Remove build depends on dh-autoreconf
+  * Bump Standards-Version to 4.1.3: nothing needs to be changed
+  * libsapi-utils: remove resourcemgr. Should be replaced by tpm2-abrmd
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Mon, 12 Feb 2018 01:33:16 +0800
+
+tpm2-tss (1.0-1) unstable; urgency=low
+
+  [ Ivan Hu ]
+  * Update to upstream version 1.0
+    - Change soname to libsapi0
+    - Add debian/clean to remove unclean files
+  * Add binary executables from test to usr/bin
+
+  [ Ying-Chun Liu (PaulLiu) ]
+  * Initial upload to Debian (Closes: #815846)
+  * Add manpages.
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Tue, 17 Jan 2017 15:36:51 +0800
+
+tpm2-tss (0.98+20160226.d4f23cc-1) unstable; urgency=medium
+
+  * Initial upload.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Mon, 20 Jun 2016 11:28:06 -0400
+
 tpm2-tss (0.98+20160226.d4f23cc-0ubuntu2) xenial; urgency=medium
 
   * debian/libtss2-utils.tpm2-resourcemgr.service: ship a systemd unit to be
